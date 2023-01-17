@@ -11,7 +11,7 @@ WORKDIR /app
 COPY . /app
 
 VOLUME ["/app"]
-RUN chmod +x /tini
+RUN chmod +x /usr/bin/tini
 ENTRYPOINT ["/usr/bin/tini", "-v", "--"]
 COPY docker-entrypoint.sh /
 CMD /docker-entrypoint.sh
