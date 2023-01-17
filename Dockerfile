@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends tini
 
 WORKDIR /app
 
+COPY . /app
+
 VOLUME ["/app"]
 ENTRYPOINT ["/usr/bin/tini", "-v", "--"]
 COPY docker-entrypoint.sh /
