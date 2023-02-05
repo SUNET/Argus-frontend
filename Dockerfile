@@ -6,9 +6,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends tini
 
+COPY . /app
+
 WORKDIR /app
 
-VOLUME ["/app"]
+
+
 ENTRYPOINT ["/usr/bin/tini", "-v", "--"]
 COPY docker-entrypoint.sh /
 CMD /docker-entrypoint.sh
